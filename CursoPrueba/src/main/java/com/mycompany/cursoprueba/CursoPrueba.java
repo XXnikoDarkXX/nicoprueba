@@ -10,5 +10,27 @@ package com.mycompany.cursoprueba;
  * @author nicoc
  */
 public class CursoPrueba {
-    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+      
+        
+        
+        String [][]saludos={{"muchos","ahora","vez"},{"la","y capaces","a"},{"de trabajar mucho","sois","alumnos"}};
+        System.out.println("Tu matriz es: \n"+imprimeMatriz(saludos));
+    }
+  
+      public static String imprimeMatriz (String [][]orig){
+        String res="";
+        for (int i = 0; i <orig.length ; i++) {
+            for (int j = 0; j < orig[i].length; j++) {
+                 res+=orig[i][j]+"|";
+            }
+            res+="\n";
+        }
+        return res;
+    }
 }
