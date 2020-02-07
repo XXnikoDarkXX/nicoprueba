@@ -20,9 +20,20 @@ public class CursoPrueba {
         
         
         String [][]saludos={{"muchos","ahora","vez"},{"la","y capaces","a"},{"de trabajar mucho","sois","alumnos"}};
+       
+        
+        
         System.out.println("Tu matriz es: \n"+imprimeMatriz(saludos));
     }
-  
+    public static String [] ordenarMatriz(String [] orig){
+        String [][]destino=new String[3][3];
+           
+           for (int i = 0; i < orig.length; i++) {
+               for (int j = 0; j < orig[i].length(); j++) {
+                
+               }
+        }
+    }
       public static String imprimeMatriz (String [][]orig){
         String res="";
         for (int i = 0; i <orig.length ; i++) {
