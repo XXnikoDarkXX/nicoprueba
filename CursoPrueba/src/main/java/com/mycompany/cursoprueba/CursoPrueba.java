@@ -20,65 +20,16 @@ public class CursoPrueba {
         // TODO code application logic here
       
         
-        
-        String [][]saludos={{"muchos","ahora","vez"},{"la","y capaces","a"},{"de trabajar mucho","sois","alumnos"}};
-       int [][]destino=new int[3][3];
-       int contador=0;
-       int contaFila=0;
-       
-       String []comprobacion=new String [12];
-        
-      String cadena= Arrays.deepToString(saludos);
-            System.out.println("esta es la cadena"+cadena);
-       cadena =cadena.replace("[", "").replace("]", "");
-        System.out.println("esta es la cadena"+cadena);
-        comprobacion=cadena.split(",");
-           intercambiarValores(saludos,(byte)0,(byte)2,(byte)2,(byte)1); 
-        for (int i = 0; i < comprobacion.length; i++) {
-            System.out.print("| "+comprobacion[i]+" ");
+        String[][]matriz={{"yo quird!","descifero","passworar"},{"techo","mueño","sungo"}};
+        int f0,c0,f1,c1;
+       String aux;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length-1; j++) {
+                
+            }
         }
         
-
-            for (int i=0; i < comprobacion.length-1; i++ ) {
-
-for (int j=i+1; j<comprobacion.length; j++) {
-
-if (comprobacion[i].length() > comprobacion[j].length()) {
-
-String temp = comprobacion[i];
-
-comprobacion[i] = comprobacion[j];
-
-comprobacion[j] = temp;
-
-}
-
-}
-
-}
-
-            System.out.println("\n");
- for (int i=0; i < comprobacion.length; i++ ) {
-
-     System.out.print(comprobacion[i]);
-
-     
-
- }
- contador=0;//TO DO REVISAr pues tengo que definir dos contadores seguramente o algo
-        for (int i = 0; i < saludos.length-1; i++) {
-            for (int j = 0; j < saludos[i].length; j++) {
-                
-               saludos[i][j]= comprobacion[contador];
-                contador++;
-                    
-                }
-            }
-        
-        
-        
-        
-        System.out.println("Tu matriz es: \n"+imprimeMatriz(saludos));
+        System.out.println("Tu matriz es: \n"+imprimeMatriz(matriz));
     }
    /* public static String [] ordenarMatriz(String [] orig){
         String [][]destino=new String[3][3];
