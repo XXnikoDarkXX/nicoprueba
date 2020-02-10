@@ -19,18 +19,49 @@ public class CursoPrueba {
     public static void main(String[] args) {
         // TODO code application logic here
       
+      String[][]descifrar={{"yo quiero","descifrar","password!"},{"tengo","mucho","sueño"}};
+      //Creamos la matriz comprobacion
+      //Creamos la matriz ultimas letras
+       String [][]comprobacion=new String[2][3];
+              String[][]ultimasLetras=new String [2][3];
+        String aux;         //auxiliar de letra
+        String aux2;  //auxiliar de las tres ultimas letras
+        int contadorFinal=0;//contador de 0
         
-        String[][]matriz={{"yo quird!","descifero","passworar"},{"techo","mueño","sungo"}};
-        int f0,c0,f1,c1;
-       String aux;
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length-1; j++) {
+        //añadimos las tres ultiams letras a una matriz y el texto sin las tres ultimas letras a otra
+        for (int i = 0; i < descifrar.length; i++) {
+            for (int j = 0; j < descifrar[i].length; j++) {
+                ultimasLetras[i][j]=descifrar[i][j].substring(descifrar[i][j].length()-3, descifrar[i][j].length());
+                comprobacion[i][j]=descifrar[i][j].substring(0, descifrar[i][j].length()-3);
+                
+            }
+            }
+     //Creamos el algoritmo para cifrar las letras
+        
+        for (int i = 0; i < descifrar.length; i++) {
+            for (int j = 0; j < descifrar[i].length; j++) {
+                if (i==1) {
+                     if (j==descifrar[i].length-1&&i==1) {
+                    comprobacion[i][j]+=ultimasLetras[i][0];
+                        
+                }else{
+                    comprobacion[i][j]+=ultimasLetras[i][j+1];
+                } 
+                }
+         
+                if (i==0) {
+                  if (j==descifrar[i].length-1&&i==0) {
+                    comprobacion[i][0]+=ultimasLetras[i][j];
+                }else{
+                    comprobacion[i][j+1]+=ultimasLetras[i][j];
+                }  
+                }
                 
             }
         }
         
-        System.out.println("Tu matriz es: \n"+imprimeMatriz(matriz));
-    }
+        System.out.println("Tu matriz es: \n"+imprimeMatriz(comprobacion));
+    
    /* public static String [] ordenarMatriz(String [] orig){
         String [][]destino=new String[3][3];
            String cadena;
@@ -43,6 +74,7 @@ public class CursoPrueba {
            return null;
            }
     */
+    }
       public static String imprimeMatriz (String [][]orig){
         String res="";
         for (int i = 0; i <orig.length ; i++) {
